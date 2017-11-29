@@ -1,0 +1,23 @@
+[user]
+	email = azinger@data-inco.fr
+	name = Adrien
+[alias]
+	st = status
+	d = diff
+	l = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	b = branch
+	showfiles = show --pretty=\"format:\" --name-status
+	amend = commit --amend --no-edit
+	co = "!f() { git checkout "*$1*"; }; f"
+	alias = config --get-regexp alias
+	ad = "!f() { git add "*$1*"; }; f"
+	h = rev-parse --verify
+	showalias = config --get-regexp alias
+	day = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all --since=\"1 day ago\" --author=azinger
+	week = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all --since=\"4 day ago\" --author=azinger
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
